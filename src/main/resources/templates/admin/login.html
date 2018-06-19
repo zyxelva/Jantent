@@ -14,6 +14,8 @@
     <script th:src="@{/jantent/assets/js/amazeui.min.js}"></script>
     <link rel="stylesheet" th:href="@{/jantent/assets/css/amazeui.min.css}"/>
     <link rel="stylesheet" th:href="@{/jantent/assets/css/app.css}"/>
+    <link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.css"/>
+ 	<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.min.js"></script>
     <script th:src="@{/admin/js/base.js}"></script>
 </head>
 <body>
@@ -62,6 +64,7 @@
                 if (result && result.success) {
                     window.location.href = '/admin/index';
                 } else {
+                	alert(result.msg || '登录失败');
                     tale.alertError(result.msg || '登录失败');
                 }
             }
