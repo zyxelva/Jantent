@@ -57,7 +57,7 @@ public class SettingController extends AbstractController {
 	 * @param request
 	 * @return
 	 */
-	@GetMapping(value = "/index")
+	@GetMapping(value = "")
 	public String index(HttpServletRequest request) {
 		final List<OptionVo> volist = optionService.getOptions();
 		final Map<String, String> options = new HashMap<>();

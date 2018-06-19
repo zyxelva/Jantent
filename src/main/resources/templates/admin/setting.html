@@ -46,10 +46,12 @@
                                         <div class="col-md-9">
                                             <select name="site_theme" class="form-control">
                                                 <option value="default" th:selected="${options.site_theme=='default'}?true:false">默认主题</option>
+                                                <!-- <option value="theme1"  >主题1</option>
+                                                <option value="theme2"  >主题2</option>
+                                                <option value="theme3"  >主题3</option> -->
                                             </select>
                                         </div>
                                     </div>
-
                                     <input type="hidden" name="allow_install" id="allow_install"/>
                                     <div class="clearfix pull-right">
                                         <button type="button" class="btn btn-primary waves-effect waves-light" onclick="saveSetting()">
@@ -78,8 +80,8 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">黑名单IP列表</label>
                                         <div class="col-md-9">
-                            <textarea rows="3" class="form-control" name="block_ips"
-                                      placeholder="请输入黑名单IP，如：123.123.33.23,123.123.33.24" th:text="${options.site_block_ips}"></textarea>
+                            				<textarea rows="3" class="form-control" name="block_ips"
+                                      			placeholder="请输入黑名单IP，如：123.123.33.23,123.123.33.24" th:text="${options.site_block_ips}"></textarea>
                                         </div>
                                     </div>
 
@@ -94,12 +96,12 @@
                     </div>
 
                 </div>
-                <div th:replace="admin/footer :: footer-content"></div>
+                <div th:replace="admin/footer::footer-content"></div>
             </div>
         </div>
     </div>
 </div>
-<div th:replace="admin/footer :: footer"></div>
+<div th:replace="admin/footer::footer"></div>
 <script src="//cdn.bootcss.com/jquery-toggles/2.0.4/toggles.min.js"></script>
 <script type="text/javascript">
     /*<![CDATA[*/
@@ -111,7 +113,7 @@
     function saveSetting() {
         var param = $('#global-form').serialize();
         tale.post({
-            url : '/admin/setting',
+            url : '/admin/setting/saving',
             data: param,
             success: function (result) {
                 if(result && result.success){
